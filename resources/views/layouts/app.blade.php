@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html class="h-100">
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -15,9 +15,9 @@
     <!-- Styles
     <link rel="stylesheet" href="{{ asset('js/app.css') }}">-->
 </head>
-<body>
+<body class="h-100">
 
-    <div id="app">
+    <div id="app" class="h-100">
       <b-navbar toggleable="md" type="dark" variant="dark">
            <b-navbar-toggle target="nav_text_collapse"></b-navbar-toggle>
            <b-navbar-brand href="{{ url('/') }}">Messenger</b-navbar-brand>
