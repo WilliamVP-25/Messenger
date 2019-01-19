@@ -7,12 +7,12 @@
         </b-col>
 
         <b-col cols="6" class="align-self-center d-none d-md-block">
-          <p class="mb-1"><strong>{{ name }}</strong></p>
-          <p class="text-muted small mb-1 ">{{ lastMessage }}</p>
+          <p class="mb-1"><strong>{{ conversation.contact_name }}</strong></p>
+          <p class="text-muted small mb-1 ">{{ conversation.last_message }}</p>
         </b-col>
 
         <b-col cols="3" class="align-self-center d-none d-md-block">
-          <p class="text-muted small">{{ lastTime }}</p>
+          <p class="text-muted small">{{ conversation.last_time }}</p>
         </b-col>
       </b-row>
     </b-list-group-item>
@@ -21,14 +21,12 @@
 
 <script>
     export default {
-      props: [
-        'variant',
-      ],
+      props: {
+        variant: String,
+        conversation: Object
+      },
       data(){
         return{
-          name: 'Juan Ramos Vue',
-          lastMessage: 'Tú: Hasta pronto...',
-          lastTime: 'Lunes'
         };
       },
       mounted() {}

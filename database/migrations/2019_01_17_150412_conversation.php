@@ -39,6 +39,6 @@ class Conversation extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('conversations');
     }
 }

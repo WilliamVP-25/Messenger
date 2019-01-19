@@ -12,8 +12,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
-    <!-- Styles
-    <link rel="stylesheet" href="{{ asset('js/app.css') }}">-->
+    <!-- Styless-->
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body class="h-100">
 
@@ -34,7 +35,8 @@
                    <b-nav-item-dropdown text="{{ Auth::user()->name }}" right>
                       <b-dropdown-item href="#"
                         @click="logout">
-                          Salir
+                         Salir
+                          <span class="fa fa-signature"></span>
                       </b-dropdown-item>
                    </b-nav-item-dropdown>
 
@@ -46,7 +48,7 @@
            </b-collapse>
       </b-navbar>
 
-        <main class="py-4">
+        <main class="py-2">
             @yield('content')
         </main>
     </div>
