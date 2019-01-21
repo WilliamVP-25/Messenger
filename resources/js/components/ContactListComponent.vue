@@ -11,8 +11,8 @@
       <contact-component
         v-for="conversation in conversations"
         :key="conversation.id"
-        @click.native="selectConversation(conversation)"
-        :conversation="conversation">
+        :conversation="conversation"
+        @click.native="selectConversation(conversation)">
       </contact-component>
       <!--<contact-component variant="info">
       </contact-component>
@@ -26,24 +26,18 @@
 
 <script>
     export default {
+      props: {
+        conversations: Array
+      },
       data(){
         return{
-          conversations: []
         };
       },
       mounted() {
-        this.getConversations();
       },
       methods:{
-        getConversations(){
-          axios.get('/api/conversations')
-          .then((response) => {
-            //console.log(response.data);
-            this.conversations= response.data;
-          })
-        },
         selectConversation(conversation){
-          
+          this.$emit('conversationSelected', conversation);
         }
       }
     }

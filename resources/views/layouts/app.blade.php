@@ -35,8 +35,8 @@
                    <b-nav-item-dropdown text="{{ Auth::user()->name }}" right>
                       <b-dropdown-item href="#"
                         @click="logout">
-                         Salir
-                          <span class="fa fa-signature"></span>
+                         <span class="fa fa-sign-out-alt"></span> Salir
+
                       </b-dropdown-item>
                    </b-nav-item-dropdown>
 

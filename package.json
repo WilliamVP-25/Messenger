@@ -27,6 +27,8 @@
     },
     "dependencies": {
         "bootstrap-vue": "^2.0.0-rc.11",
-        "mdbootstrap": "^4.6.1"
+        "laravel-echo": "^1.5.2",
+        "mdbootstrap": "^4.6.1",
+        "pusher-js": "^4.3.1"
     }
 }

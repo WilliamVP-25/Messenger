@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-media :right-align="writtenByMe" vertical-align="center" class="text-right mb-2 p-2">
+    <b-media :right-align="writtenByMe" vertical-align="center" class="mb-2 p-2">
       <b-img rounded="circle" slot="aside" blank blank-color="#ccc" width="50" alt="placeholder" />
       <b-card
         bg-variant=""
@@ -18,7 +18,7 @@
     },
     data(){
       return{
-        
+
       };
     },
     mounted() {
