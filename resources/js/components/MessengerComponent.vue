@@ -34,7 +34,7 @@
       },
       mounted() {
 				this.getConversations();
-        Echo.channel(`users.${this.userId}`)
+        Echo.private(`users.${this.userId}`)
         .listen('MessageSent', (data) => {
           const message= data.message;
 					message.written_by_me= false;
@@ -63,7 +63,6 @@
 						return conversation.contact_id == message.from_id ||
 									conversation.contact_id == message.to_id;
 					});
-
 					conversation.last_message= message.content;
 					conversation.last_time= message.created_at;
 
