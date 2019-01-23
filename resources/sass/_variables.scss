@@ -11,7 +11,87 @@ $line-height-base: 1.6;
   border-radius: 0px !important;
 
 }
+.md-form label{
+  background: transparent !important;
+  font-weight: 600;
+}
+
 
 button, button:hover, button:focus, button::before{
   border: none !important;
+}
+
+  .chat{
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+.active{
+    background-color: rgba(0,0,0,0.3);
+}
+  .user_img{
+    height: 70px;
+    width: 70px;
+    border:1.5px solid #f5f6fa;
+
+  }
+  .user_img_msg{
+    height: 40px;
+    width: 40px;
+    border:1.5px solid #f5f6fa;
+
+  }
+.img_cont{
+    position: relative;
+    height: 70px;
+    width: 70px;
+}
+.img_cont_msg{
+    height: 40px;
+    width: 40px;
+}
+.online_icon{
+  position: absolute;
+  height: 25px;
+  width:25px;
+  background-color: #4cd137;
+  border-radius: 50%;
+  bottom: -0.2em;
+  right: 0em;
+  border:1px solid white;
+}
+.offline{
+  background-color: #c23616 !important;
+}
+.user_info{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 15px;
+}
+.user_info span{
+  font-size: 20px;
+  color: white;
+}
+.user_info p{
+font-size: 10px;
+color: rgba(255,255,255,0.6);
+}
+.video_cam{
+  margin-left: 50px;
+  margin-top: 5px;
+}
+.video_cam span{
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.msg_container{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+  border-radius: 25px;
+  background-color: #82ccdd;
+  padding: 10px;
+  position: relative;
 }

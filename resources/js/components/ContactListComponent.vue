@@ -1,27 +1,13 @@
 <template>
-  <div>
-    <b-form class="mx-2 align-self-center" autocomplete="off">
-      <b-form-input type="text" class="text-center"
-        id="search" name="search"
-        placeholder="Buscar contacto...">
-    </b-form-input>
-    </b-form>
-    <b-list-group>
-
+    <b-list-group class="scrollbar-winter-neva thin" style="overflow:auto;">
       <contact-component
         v-for="conversation in conversations"
         :key="conversation.id"
         :conversation="conversation"
+        :selected="selectConversationId === conversation.id"
         @click.native="selectConversation(conversation)">
       </contact-component>
-      <!--<contact-component variant="info">
-      </contact-component>
-      <contact-component variant="secondary">
-      </contact-component>
-      <contact-component>
-      </contact-component>-->
     </b-list-group>
-  </div>
 </template>
 
 <script>
@@ -31,12 +17,14 @@
       },
       data(){
         return{
+          selectConversationId: null
         };
       },
       mounted() {
       },
       methods:{
         selectConversation(conversation){
+          this.selectConversationId= conversation.id
           this.$emit('conversationSelected', conversation);
         }
       }

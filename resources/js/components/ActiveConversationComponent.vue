@@ -1,19 +1,30 @@
 <template>
   <div>
-    <b-row no-gutters class="mx-2">
+    <b-row class="mx-2">
       <b-col cols="8">
 
         <b-card no-body
-          footer="Card Footer"
-          footer-tag="footer"
           class="h-100">
+          <div slot="header">
+            <b-media vertical-align="center">
+              <b-img :src="contactImage" rounded="circle" slot="aside" width="50" height="50" alt="placeholder" />
+                <div>
+                  {{ contactName }}
+                </div>
+            </b-media>
+          </div>
           <b-card-body class="card-body-scroll scrollbar-winter-neva thin">
             <message-conversation-component
               v-for="message in messages"
               :key="message.id"
-              :written-by-me="message.written_by_me">
+              :written-by-me="message.written_by_me"
+              :image= "message.written_by_me ? myImage : contactImage">
               {{ message.content }}
+              <p class="small text-muted p-0 m-0">
+                {{ message_time(message.created_at) }}
+              </p>
             </message-conversation-component>
+
           </b-card-body>
 
           <div slot="footer" class="m-0" style="border: 1px solid transparent;">
@@ -28,7 +39,7 @@
                 class="text-right"
                 type="text"/>
               <b-input-group-append>
-                <button style="height: auto;" type="submit" title="Enviar" class="btn btn-success"><span class="fa fa-paper-plane"></span></button>
+                <button style="height: auto;" type="submit" title="Enviar" class="btn btn-success"><span class="fa fa-location-arrow"></span></button>
               </b-input-group-append>
             </b-input-group>
             </b-form>
@@ -44,9 +55,8 @@
           class="h-100">
 
           <b-media vertical-align="center" class="mb-2 p-2">
-            <b-img rounded="circle" slot="aside" blank blank-color="#ccc" width="60" alt="placeholder" />
+            <b-img :src="contactImage" rounded="circle" slot="aside" width="50" height="50" alt="placeholder" />
             <b-card
-              bg-variant=""
               text-variant="dark">
               {{ contactName }}
             </b-card>
@@ -75,7 +85,9 @@
     props:{
       contactId: Number,
       contactName: String,
-      messages: Array
+      contactImage: String,
+      messages: Array,
+      myImage: String
     },
     data(){
       return{
@@ -103,6 +115,9 @@
       scrollToBottom(){
         const el= document.querySelector('.card-body-scroll');
         el.scrollTop= el.scrollHeight;
+      },
+      message_time(date){
+        return moment(date, 'YYYY-MM-DD hh:mm:ss').locale('es').calendar();
       }
     },
     updated() {

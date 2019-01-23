@@ -1,9 +1,9 @@
 <template>
   <div>
-    <b-media :right-align="writtenByMe" vertical-align="center" class="mb-2 p-2">
-      <b-img rounded="circle" slot="aside" blank blank-color="#ccc" width="50" alt="placeholder" />
+    <b-media :right-align="writtenByMe" vertical-align="center" class="mb-2 p-2 media-body-message">
+      <b-img :src="image" rounded="circle" slot="aside" width="50" height="48" alt="placeholder" />
       <b-card
-        bg-variant=""
+        :class="writtenByMe ? 'text-right' : 'text-left'"
         text-variant="dark">
           <slot></slot>
       </b-card>
@@ -14,15 +14,14 @@
 <script>
   export default {
     props: {
-      writtenByMe: Boolean
+      writtenByMe: Boolean,
+      image: String
     },
     data(){
       return{
-
       };
     },
     mounted() {
-      //console.log(this.writtenByMe);
     }
   }
 </script>
